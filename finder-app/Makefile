@@ -1,23 +1,14 @@
-# Variables for cross-compilation
-CC := $(CROSS_COMPILE)gcc
-CFLAGS := -Wall -Werror -g
-TARGET := writer
-SRCS := writer.c
-OBJS := $(SRCS:.c=.o)
+CC = $(CROSS_COMPILE)gcc
+CFLAGS = -Wall -Wextra -Werror -g
+TARGET = writer
 
-# Default target to build the application
-.PHONY: all
+.PHONY: all clean
+
 all: $(TARGET)
 
-# Rule to build the writer application
-$(TARGET): $(OBJS)
+$(TARGET): writer.c
 	$(CC) $(CFLAGS) -o $@ $^
 
-# Rule to compile object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Clean target to remove generated files
-.PHONY: clean
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(TARGET) *.o
+
