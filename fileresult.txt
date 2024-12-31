@@ -1,0 +1,5 @@
+Cross-compilation Command:
+make CROSS_COMPILE=aarch64-none-linux-gnu-
+
+File Details of Writer Binary:
+finder-app/writer: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=4a74969e3a2b39c9662e96e931bea1869d092d65, for GNU/Linux 3.2.0, with debug_info, not stripped
